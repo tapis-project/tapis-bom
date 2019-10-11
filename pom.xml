@@ -6,16 +6,22 @@
 
     <groupId>edu.utexas.tacc.tapis</groupId>
     <artifactId>tapis-bom</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <packaging>pom</packaging>
 
     <name>TACC API BOM</name>
     <description>TAPIS services BOM dependencies</description>
-    <url>https://github.com/sviperll/universal-maven-parent</url>
+    <url>https://github.com/tapis-project/tapis-bom</url>
     <organization>
         <name>TACC</name>
         <url>http://tacc.utexas.edu</url>
     </organization>
+
+    <scm>
+        <connection>scm:git:https://github.com/tapis-project/tapis-bom.git</connection>
+        <url>https://github.com/tapis-project/tapis-bom</url>
+        <tag>HEAD</tag>
+    </scm>
 
     <licenses>
         <license>
@@ -53,12 +59,6 @@
             </comments>
         </license>
     </licenses>
-
-    <scm>
-        <connection>scm:git:https://github.com/TACC-Cloud/tapis-services.git</connection>
-        <url>https://github.com/TACC-Cloud/tapis-services</url>
-        <tag>HEAD</tag>
-    </scm>
 
     <developers>
         <developer>
@@ -186,7 +186,7 @@
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <jcraft.version>0.1.54</jcraft.version>
         <jersey-container-servlet.version>2.29</jersey-container-servlet.version> <!-- jersey group -->
-        <jjwt-aloe.version>0.9.1</jjwt-aloe.version>
+        <jjwt.version>0.9.1</jjwt.version>
         <jetty-server.version>9.4.0.M1</jetty-server.version>
         <logback-classic.version>1.2.3</logback-classic.version>  <!-- Logback supplies the proper version of sl4j -->
         <metrics-core.version>3.2.3</metrics-core.version>
@@ -208,7 +208,21 @@
     </properties>
     <dependencyManagement>
         <dependencies>
-
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-core</artifactId>
+                <version>${metrics-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>args4j</groupId>
+                <artifactId>args4j</artifactId>
+                <version>${args4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
+            </dependency>
             <dependency>
                 <!-- There are only test dependencies on testng -->
                 <groupId>org.testng</groupId>
@@ -244,14 +258,14 @@
                 <version>${commons-dbutils.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.google.code.gson</groupId>
-                <artifactId>gson</artifactId>
-                <version>${gson.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -317,11 +331,25 @@
                 <groupId>jakarta.servlet</groupId>
                 <artifactId>jakarta.servlet-api</artifactId>
                 <version>${jakarta.servlet-api.version}</version>
-                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.inject</groupId>
+                <artifactId>jersey-hk2</artifactId>
+                <version>${jersey-container-servlet.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.core</groupId>
+                <artifactId>jersey-common</artifactId>
+                <version>${jersey-container-servlet.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.containers</groupId>
                 <artifactId>jersey-container-servlet</artifactId>
+                <version>${jersey-container-servlet.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-servlet-core</artifactId>
                 <version>${jersey-container-servlet.version}</version>
             </dependency>
             <dependency>
@@ -336,6 +364,11 @@
             </dependency>
             <dependency>
                 <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-core</artifactId>
+                <version>${swagger-jaxrs2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
                 <artifactId>swagger-jaxrs2-servlet-initializer</artifactId>
                 <version>${swagger-jaxrs2.version}</version>
             </dependency>
@@ -346,8 +379,8 @@
             </dependency>
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt-aloe</artifactId>
-                <version>${jjwt-aloe.version}</version>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.jcraft</groupId>
