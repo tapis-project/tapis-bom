@@ -6,7 +6,7 @@
 
     <groupId>edu.utexas.tacc.tapis</groupId>
     <artifactId>tapis-bom</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>TACC API BOM</name>
