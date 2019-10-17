@@ -408,7 +408,7 @@
                 <configuration>
                     <gpgArguments>
 <!--                        <arg>&#45;&#45;pinentry-mode</arg>-->
-                        <arg>loopback</arg>
+                        <arg>--batch</arg>
                     </gpgArguments>
                 </configuration>
                 <executions>
