@@ -4,7 +4,7 @@
 
     <groupId>edu.utexas.tacc</groupId>
     <artifactId>tapis-bom</artifactId>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>TACC API BOM</name>
@@ -152,16 +152,29 @@
 
     <properties>
         <!-- Java version -->
-        <java-source.version>1.12</java-source.version>
-        <java-target.version>1.12</java-target.version>
+        <java-source.version>1.13</java-source.version>
+        <java-target.version>1.13</java-target.version>
 
         <!-- Maven compiler plugin Java release support -->
-        <maven-compiler-plugin-release>12</maven-compiler-plugin-release>
+        <maven-compiler-plugin-release>13</maven-compiler-plugin-release>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
+        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <flyway-maven-plugin.version>6.0.4</flyway-maven-plugin.version>
+        <maven-buildnumber-plugin.version>1.4</maven-buildnumber-plugin.version>
+        <maven-shade-plugin.version>3.2.1</maven-shade-plugin.version>
+        <swagger-maven-plugin.version>2.0.10</swagger-maven-plugin.version>
+        <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+
 
         <!-- Library dependencies  -->
         <amqp-client.version>5.7.3</amqp-client.version>
         <args4j.version>2.33</args4j.version>
         <commons-codec.version>1.12</commons-codec.version>
+        <commons-dbutils.version>1.7</commons-dbutils.version>
         <commons-lang3.version>3.9</commons-lang3.version>
         <commons-io.version>2.6</commons-io.version>
         <commons-math3.version>3.6.1</commons-math3.version>
@@ -173,6 +186,7 @@
         <httpclient.version>4.5.8</httpclient.version>
         <httpmime.version>4.5.8</httpmime.version>
         <jackson-annotations.version>2.9.9</jackson-annotations.version>
+        <jackson-databind.version>2.9.4</jackson-databind.version>
         <jargon-core.version>4.3.0.1-RELEASE</jargon-core.version>
         <javax.mail.version>1.6.2</javax.mail.version>
         <javax.ws.rs-api.version>2.1</javax.ws.rs-api.version>
@@ -188,6 +202,7 @@
         <jetty-server.version>9.4.0.M1</jetty-server.version>
         <logback-classic.version>1.2.3</logback-classic.version>  <!-- Logback supplies the proper version of sl4j -->
         <metrics-core.version>3.2.3</metrics-core.version>
+        <mockito-core.version>3.0.0</mockito-core.version>
         <org.everit.json.schema.version>1.11.1</org.everit.json.schema.version>
         <org.json.version>20180130</org.json.version>
         <p6spy.version>3.8.3</p6spy.version>
@@ -331,6 +346,31 @@
                 <version>${jakarta.servlet-api.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.glassfish.jersey.test-framework.providers</groupId>
+                <artifactId>jersey-test-framework-provider-grizzly2</artifactId>
+                <version>${jersey-container-servlet.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.media</groupId>
+                <artifactId>jersey-media-json-jackson</artifactId>
+                <version>${jersey-container-servlet.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.media</groupId>
+                <artifactId>jersey-media-multipart</artifactId>
+                <version>${jersey-container-servlet.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-grizzly2-http</artifactId>
+                <version>${jersey-container-servlet.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.test-framework</groupId>
+                <artifactId>jersey-test-framework-core</artifactId>
+                <version>${jersey-container-servlet.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.glassfish.jersey.inject</groupId>
                 <artifactId>jersey-hk2</artifactId>
                 <version>${jersey-container-servlet.version}</version>
@@ -385,41 +425,238 @@
                 <artifactId>jsch</artifactId>
                 <version>${jcraft.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito-core.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson-databind.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <build>
+        <pluginManagement>
+            <plugins>
+
+                <!-- For sourcemaps to be created with the released code -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.flywaydb</groupId>
+                    <artifactId>flyway-maven-plugin</artifactId>
+                    <version>${flyway-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>flyway-clean-database</id>
+                            <phase>pre-integration-test</phase>
+                            <goals>
+                                <goal>clean</goal>
+                                <goal>migrate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- For building a FAT jar file. Downstream APIs will need to specify the transformers/mainClass that is commented out below     -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${maven-shade-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                            <configuration>
+                                <filters>
+                                    <filter>
+                                        <artifact>*:*</artifact>
+                                        <excludes>
+                                            <exclude>module-info.class</exclude>
+                                            <exclude>META-INF/*.SF</exclude>
+                                            <exclude>META-INF/*.DSA</exclude>
+                                            <exclude>META-INF/*.RSA</exclude>
+                                        </excludes>
+                                    </filter>
+                                </filters>
+<!--                                <transformers>-->
+<!--                                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
+<!--                                        <mainClass>edu.utexas.tacc.tapis.files.api.FilesApplication</mainClass>-->
+<!--                                    </transformer>-->
+<!--                                </transformers>-->
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+
+                <!-- Generate the openapi documentation from the code -->
+                <plugin>
+                    <groupId>io.swagger.core.v3</groupId>
+                    <artifactId>swagger-maven-plugin</artifactId>
+                    <version>${swagger-maven-plugin.version}</version>
+                    <configuration>
+                        <outputFileName>openapi</outputFileName>
+                        <outputPath>${project.basedir}/src/main/resources/</outputPath>
+                        <outputFormat>JSONANDYAML</outputFormat>
+                        <resourcePackages>
+                            <package>edu.utexas.tacc.tapis.files.api</package>
+                        </resourcePackages>
+                        <prettyPrint>true</prettyPrint>
+                    </configuration>
+                </plugin>
+
+                <!-- Puts the commit hash in resources               -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>buildnumber-maven-plugin</artifactId>
+                    <version>${maven-buildnumber-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>create</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <doCheck>false</doCheck>
+                        <doUpdate>false</doUpdate>
+                        <shortRevisionLength>8</shortRevisionLength>
+                    </configuration>
+                </plugin>
+
+                <!-- Javadocs, required to push to maven central     -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <configuration>
+                        <doclint>none</doclint>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+
+                <!-- For running unit tests    -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                    <configuration>
+                        <groups>unit</groups>
+                    </configuration>
+                </plugin>
+
+                <!-- For running integration tests with maven. The tests
+                     need to be annotated like @Test(groups={'integration'}) -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven-failsafe-plugin.version}</version>
+                    <configuration>
+                        <trimStackTrace>false</trimStackTrace>
+                        <groups>integration</groups>
+                        <includes>
+                            <include>**/*Test*.java</include>
+                        </includes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- Specify which Java version to compile to               -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${maven-compiler-plugin-release}</source>
+                        <target>${maven-compiler-plugin-release}</target>
+                    </configuration>
+                </plugin>
+
+                <!--  For releases to maven central          -->
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>${nexus-staging-maven-plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>ossrh</serverId>
+                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
+
+
+                <!--   For signing the releases to maven central with a GPG key       -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven-gpg-plugin.version}</version>
+                    <configuration>
+                        <gpgArguments>
+                            <arg>--batch</arg>
+                        </gpgArguments>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+
+        </pluginManagement>
+
+        <!--
+             These are the plugins needed FOR THIS PROJECT to be deployed. The other
+             plugins defined in pluginManagement above are not utilized in the build
+        -->
         <plugins>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <configuration>
-                    <gpgArguments>
-<!--                        <arg>&#45;&#45;pinentry-mode</arg>-->
-                        <arg>--batch</arg>
-                    </gpgArguments>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
