@@ -4,7 +4,7 @@
 
     <groupId>edu.utexas.tacc</groupId>
     <artifactId>tapis-bom</artifactId>
-    <version>1.1</version>
+    <version>1.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>TACC API BOM</name>
@@ -18,7 +18,7 @@
     <scm>
         <connection>scm:git:git@github.com:tapis-project/tapis-bom.git</connection>
         <url>https://github.com/tapis-project/tapis-bom</url>
-        <tag>tapis-bom-1.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
 
