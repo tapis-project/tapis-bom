@@ -252,7 +252,7 @@
         <jcraft.version>0.1.54</jcraft.version>
         <jersey-container-servlet.version>2.29</jersey-container-servlet.version> <!-- jersey group -->
         <jetty-server.version>9.4.0.M1</jetty-server.version>
-        <jjwt.version>0.9.1</jjwt.version>
+        <jjwt.version>0.10.7</jjwt.version>
         <junit.version>4.12</junit.version>
         <logback-classic.version>1.2.3</logback-classic.version>  <!-- Logback supplies the proper version of sl4j -->
         <metrics-core.version>3.2.3</metrics-core.version>
@@ -455,8 +455,20 @@
             </dependency>
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
+                <artifactId>jjwt-api</artifactId>
                 <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt.version}</version>
+                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
