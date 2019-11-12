@@ -4,7 +4,7 @@
 
     <groupId>edu.utexas.tacc.tapis</groupId>
     <artifactId>tapis-bom</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <!-- Main BOM file for Tapis java projects using shared code and settings.
@@ -190,6 +190,18 @@
         <!-- Maven compiler plugin Java release support -->
         <maven-compiler-plugin-release>13</maven-compiler-plugin-release>
 
+        <!-- Version of tapis-shared-java to be used. Individual projects may want to override. -->
+        <tapis-shared-java.version>1.1-SNAPSHOT</tapis-shared-java.version>
+
+        <!-- Source encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Capture the UTC build time for filtering use in children poms -->
+        <!-- There's some goofy behavior that prevent the direct use of    -->
+        <!-- maven property, so we format and reassign it.                 -->
+        <build.timestamp>${maven.build.timestamp}</build.timestamp>
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
+
         <!-- Below are the version numbers for all software on which we explicitly depend.  -->
         <!-- If a library or plugin appears as a dependency in some pom file, then that     -->
         <!-- artifact's version number should be in the lists below for easy management and -->
@@ -208,6 +220,7 @@
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <flyway-maven-plugin.version>6.0.4</flyway-maven-plugin.version>
+        <google-maven-replacer-plugin.version>1.5.3</google-maven-replacer-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
         <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
@@ -265,7 +278,6 @@
         <p6spy.version>3.8.3</p6spy.version>
         <postgresql.version>42.2.6</postgresql.version>
         <rabbitmq.version>3.6.11</rabbitmq.version>
-        <replacer.version>1.5.3</replacer.version>
         <shiro.version>1.4.1</shiro.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <snakeyaml.version>1.25</snakeyaml.version>
