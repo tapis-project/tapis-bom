@@ -39,7 +39,9 @@
             </releases>
             <snapshots>
                 <enabled>true</enabled>
-               <updatePolicy>always</updatePolicy>
+                <!-- Setting to always makes it difficult to change the BOM for -->
+                <!-- local development because local changes get overwritten.   -->
+                <!-- <updatePolicy>always</updatePolicy> -->
             </snapshots>
         </repository>
         <repository>
