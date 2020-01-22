@@ -256,10 +256,10 @@
         <gson-fire.version>1.8.3</gson-fire.version>
         <guava.version>28.0-jre</guava.version>
         <hikariCP.version>3.3.1</hikariCP.version>
+        <hk2.version>2.6.1</hk2.version>
         <httpclient.version>4.5.8</httpclient.version>
         <httpmime.version>4.5.8</httpmime.version>
-        <jackson-annotations.version>2.9.9</jackson-annotations.version>
-        <jackson-databind.version>2.9.10.1</jackson-databind.version>
+        <jackson.version>2.10.1</jackson.version>
         <jakarta.servlet-api.version>4.0.2</jakarta.servlet-api.version>          <!-- jersey group -->
         <jargon-core.version>4.3.0.1-RELEASE</jargon-core.version>
         <javax.activation.activation.version>1.1.1</javax.activation.activation.version>
@@ -288,7 +288,8 @@
         <shiro.version>1.4.1</shiro.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <snakeyaml.version>1.25</snakeyaml.version>
-        <software.amazon.awssdk.version>2.5.56</software.amazon.awssdk.version>
+        <software.amazon.awssdk.version>2.10.33</software.amazon.awssdk.version> <!-- v2 of aws sdk-->
+        <com.amazonaws.version>1.11.327</com.amazonaws.version> <!-- v1 of aws sdk-->
         <sshj.version>0.27.0</sshj.version>
         <statefulj.version>3.0</statefulj.version>
         <swagger-annotations.version>2.0.10</swagger-annotations.version>
@@ -360,6 +361,20 @@
                 <version>${gson.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-bom</artifactId>
+                <version>${com.amazonaws.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>bom</artifactId>
+                <version>${software.amazon.awssdk.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
                 <groupId>io.gsonfire</groupId>
                 <artifactId>gson-fire</artifactId>
                 <version>${gson-fire.version}</version>
@@ -377,12 +392,18 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
-                <version>${jackson-annotations.version}</version>
+                <version>${jackson.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>${jackson-databind.version}</version>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.servlet</groupId>
@@ -428,6 +449,11 @@
                 <groupId>com.jcraft</groupId>
                 <artifactId>jsch</artifactId>
                 <version>${jcraft.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.hk2</groupId>
+                <artifactId>hk2</artifactId>
+                <version>${hk2.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.test-framework.providers</groupId>
