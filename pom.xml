@@ -276,6 +276,7 @@
         <jetty-server.version>9.4.0.M1</jetty-server.version>
         <jjwt.version>0.10.7</jjwt.version>
         <junit.version>4.12</junit.version>
+        <kubernetes-client.version>8.0.0</kubernetes-client.version>
         <logback-classic.version>1.2.3</logback-classic.version>  <!-- Logback supplies the proper version of sl4j -->
         <metrics-core.version>3.2.3</metrics-core.version>
         <mockito-core.version>3.0.0</mockito-core.version>
@@ -642,7 +643,7 @@
             <dependency>
                 <groupId>io.kubernetes</groupId>
                 <artifactId>client-java</artifactId>
-                <version>8.0.1-SNAPSHOT</version>
+                <version>${kubernetes-client.version}</version>
             </dependency>        
         </dependencies>
     </dependencyManagement>
