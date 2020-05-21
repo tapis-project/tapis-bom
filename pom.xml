@@ -227,6 +227,7 @@
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <flyway-maven-plugin.version>6.0.8</flyway-maven-plugin.version>
+        <jooq-codegen-maven-plugin.version>3.13.1</jooq-codegen-maven-plugin.version>
         <google-maven-replacer-plugin.version>1.5.3</google-maven-replacer-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
@@ -275,6 +276,7 @@
         <jersey-container-servlet.version>2.30</jersey-container-servlet.version> <!-- jersey group -->
         <jetty-server.version>9.4.0.M1</jetty-server.version>
         <jjwt.version>0.10.7</jjwt.version>
+        <jooq.version>3.13.1</jooq.version>
         <junit.version>4.12</junit.version>
         <kubernetes-client.version>8.0.0</kubernetes-client.version>
         <logback-classic.version>1.2.3</logback-classic.version>  <!-- Logback supplies the proper version of sl4j -->
@@ -771,6 +773,21 @@
                             <goals>
                                 <goal>clean</goal>
                                 <goal>migrate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.jooq</groupId>
+                    <artifactId>jooq-codegen-maven</artifactId>
+                    <version>${jooq-codegen-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>jooq-codegen</id>
+                            <phase>generate-sources</phase>
+                            <goals>
+                                <goal>generate</goal>
                             </goals>
                         </execution>
                     </executions>
