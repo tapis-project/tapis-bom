@@ -658,6 +658,11 @@
                 <artifactId>activemq-client</artifactId>
                 <version>${activemq-client.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.statefulj</groupId>
+                <artifactId>statefulj-fsm</artifactId>
+                <version>${statefulj.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
