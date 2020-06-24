@@ -4,15 +4,12 @@
 
     <groupId>edu.utexas.tacc.tapis</groupId>
     <artifactId>tapis-bom</artifactId>
-    <version>1.7-SNAPSHOT</version>
+    <version>1.10</version>
     <packaging>pom</packaging>
 
     <!-- Main BOM file for Tapis java projects using shared code and settings.
          Defines organization, licenses, developers, repositories, shared properties, dependency management
          and plugin management.
-         This BOM file is in a maven release repository instead of a snapshot repository so that
-         projects which use this BOM do not need to specify a separate snapshot maven repository in order to
-         include shared java code that is currently at a snapshot version.
          Java projects should make this pom file their parent so they can include java shared code as dependencies.
          See github.com:tapis-project/tapis-java.git for an example.
     -->
@@ -198,7 +195,7 @@
         <maven-compiler-plugin-release>13</maven-compiler-plugin-release>
 
         <!-- Version of tapis-shared-java to be used. Individual projects may want to override. -->
-        <tapis-shared-java.version>1.1-SNAPSHOT</tapis-shared-java.version>
+        <tapis-shared-java.version>1.10</tapis-shared-java.version>
 
         <!-- Source encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
