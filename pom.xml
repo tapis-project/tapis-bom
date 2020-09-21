@@ -4,15 +4,12 @@
 
     <groupId>edu.utexas.tacc.tapis</groupId>
     <artifactId>tapis-bom</artifactId>
-    <version>1.7-SNAPSHOT</version>
+    <version>1.11.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <!-- Main BOM file for Tapis java projects using shared code and settings.
          Defines organization, licenses, developers, repositories, shared properties, dependency management
          and plugin management.
-         This BOM file is in a maven release repository instead of a snapshot repository so that
-         projects which use this BOM do not need to specify a separate snapshot maven repository in order to
-         include shared java code that is currently at a snapshot version.
          Java projects should make this pom file their parent so they can include java shared code as dependencies.
          See github.com:tapis-project/tapis-java.git for an example.
     -->
@@ -197,8 +194,12 @@
         <!-- Maven compiler plugin Java release support -->
         <maven-compiler-plugin-release>13</maven-compiler-plugin-release>
 
+        <!-- Version of tapis-client-java to be used. Individual projects may want to override. -->
+        <tapis-client-java.version>[1.11,2.0)</tapis-client-java.version>
+
         <!-- Version of tapis-shared-java to be used. Individual projects may want to override. -->
-        <tapis-shared-java.version>1.1-SNAPSHOT</tapis-shared-java.version>
+        <tapis-shared-java.version>[1.11,2.0)</tapis-shared-java.version>
+
 
         <!-- Source encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -298,7 +299,7 @@
         <com.amazonaws.version>1.11.327</com.amazonaws.version> <!-- v1 of aws sdk-->
         <sshj.version>0.27.0</sshj.version>
         <statefulj.version>3.0</statefulj.version>
-        <swagger-annotations.version>2.0.10</swagger-annotations.version>
+        <swagger-annotations.version>2.1.4</swagger-annotations.version>
         <swagger-annotations1.version>1.5.24</swagger-annotations1.version>
         <swagger-jaxrs2.version>2.0.10</swagger-jaxrs2.version>
         <swagger-ui.version>3.23.8</swagger-ui.version>
