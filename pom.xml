@@ -29,9 +29,31 @@
 
     <repositories>
         <repository>
+            <id>oss.sonatype.org-snapshot</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <!-- Setting to always makes it difficult to change the BOM for -->
+                <!-- local development because local changes get overwritten.   -->
+                <!-- <updatePolicy>always</updatePolicy> -->
+            </snapshots>
+        </repository>
+        <repository>
+            <id>oss.sonatype.org-releases</id>
+            <url>https://oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
+        <repository>
             <!-- org.everit.json.schema (schema validation) -->
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>tacc-snapshot</id>
+            <name>TACC ACI Maven repository</name>
+            <url>https://maven.tacc.utexas.edu/nexus/content/repositories/snapshots</url>
         </repository>
     </repositories>
 
@@ -154,6 +176,10 @@
     </developers>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
@@ -202,8 +228,9 @@
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <flyway-maven-plugin.version>6.0.8</flyway-maven-plugin.version>
-        <jooq-codegen-maven-plugin.version>3.13.1</jooq-codegen-maven-plugin.version>
+        <gitflow-maven-plugin.version>1.14.0</gitflow-maven-plugin.version>
         <google-maven-replacer-plugin.version>1.5.3</google-maven-replacer-plugin.version>
+        <jooq-codegen-maven-plugin.version>3.13.1</jooq-codegen-maven-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
         <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
@@ -690,7 +717,6 @@
                 <!-- instead. See the resources element below for         -->
                 <!-- filtering details.                                   -->
                 <!-- Puts the commit hash in resources                    -->
-
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>buildnumber-maven-plugin</artifactId>
@@ -884,8 +910,57 @@
                         </execution>
                     </executions>
                 </plugin>
-            </plugins>
 
+            <!--  gitflow-maven-plugin supports various git workflow steps, such as gitflow:release-start-->
+            <!--    gitflow:release-finish, gitflow:feature-start, gitflow:feature-finish-->
+              <plugin>
+                <groupId>com.amashchenko.maven.plugin</groupId>
+                <artifactId>gitflow-maven-plugin</artifactId>
+                <version>${gitflow-maven-plugin.version}</version>
+                <configuration>
+                    <!-- false = disable git push for testing -->
+                    <pushRemote>true</pushRemote>
+                    <!-- true = print output of executed commands -->
+                    <verbose>true</verbose>
+                    <!-- true = include mvn clean install during execution -->
+                    <installProject>true</installProject>
+                    <gitFlowConfig>
+                        <!-- Branch that will hold the officially released versions and be the source for hotfixes  -->
+                        <productionBranch>main</productionBranch>
+                        <!-- Branch for development that will always have the latest -->
+                        <developmentBranch>dev</developmentBranch>
+                        <!-- Prefix when creating release branch. Format will be <prefix>X.Y.Z -->
+                        <releaseBranchPrefix>release/</releaseBranchPrefix>
+                    </gitFlowConfig>
+                    <!-- List of optional configuration settings (with defaults) -->
+                    <!-- If desired run verify first -->
+                    <!-- Execute mvn verify before release -->
+                    <!--          <preReleaseGoals>verify</preReleaseGoals>-->
+                    <!--          <preHotfixGoals>verify</preHotfixGoals>-->
+                    <!--          <mvnExecutable>path_to_maven_executable</mvnExecutable>-->
+                    <!--          <gitExecutable>path_to_git_executable</gitExecutable>-->
+                    <!--          <installProject>false</installProject>-->
+                    <!--          <verbose>false</verbose>-->
+                    <!--          &lt;!&ndash; true = retain the release branch upon release-finish &ndash;&gt;-->
+                    <!--          <keepBranch>false</keepBranch>-->
+                    <!--          &lt;!&ndash; false = disable git push for testing &ndash;&gt;-->
+                    <!--          <pushRemote>false</pushRemote>-->
+                    <!--          <gitFlowConfig>-->
+                    <!--            <productionBranch>master</productionBranch>-->
+                    <!--            <developmentBranch>develop</developmentBranch>-->
+                    <!--            <featureBranchPrefix>feature/</featureBranchPrefix>-->
+                    <!--            <releaseBranchPrefix>release/</releaseBranchPrefix>-->
+                    <!--            <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>-->
+                    <!--            <supportBranchPrefix>support/</supportBranchPrefix>-->
+                    <!--            <versionTagPrefix></versionTagPrefix>-->
+                    <!--            <origin>origin</origin>-->
+                    <!--          </gitFlowConfig>-->
+                    <commitMessages>
+                        <!-- since 1.2.1, see Customizing commit messages -->
+                    </commitMessages>
+                </configuration>
+              </plugin>
+            </plugins>
         </pluginManagement>
 
     </build>
