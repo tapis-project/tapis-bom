@@ -911,8 +911,9 @@
                     </executions>
                 </plugin>
 
-            <!--  gitflow-maven-plugin supports various git workflow steps, such as gitflow:release-start-->
-            <!--    gitflow:release-finish, gitflow:feature-start, gitflow:feature-finish-->
+              <!--  gitflow-maven-plugin supports various git workflow steps, such as gitflow:release-start-->
+              <!--    gitflow:release-finish, gitflow:feature-start, gitflow:feature-finish-->
+              <!-- Used for service code release flow only. Not shared code release flow -->
               <plugin>
                 <groupId>com.amashchenko.maven.plugin</groupId>
                 <artifactId>gitflow-maven-plugin</artifactId>
