@@ -4,7 +4,7 @@
 
     <groupId>edu.utexas.tacc.tapis</groupId>
     <artifactId>tapis-bom</artifactId>
-    <version>1.11.23-SNAPSHOT</version>
+    <version>1.11.24-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <!-- Main BOM file for Tapis java projects using shared code and settings.
