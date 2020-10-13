@@ -288,7 +288,6 @@
         <okhttp.version>2.7.5</okhttp.version>
         <okhttp3.version>4.2.2</okhttp3.version>
         <org.everit.json.schema.version>1.12.1</org.everit.json.schema.version>
-        <org.json.version>20200518</org.json.version>
         <p6spy.version>3.8.3</p6spy.version>
         <postgresql.version>42.2.6</postgresql.version>
         <rabbitmq.version>3.6.11</rabbitmq.version>
