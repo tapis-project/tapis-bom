@@ -177,12 +177,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>nexus-snapshots</id>
+	    <url>http://c002.rodeo.tacc.utexas.edu:32140/repository/maven-snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>nexus-releases</id>
+	    <url>http://c002.rodeo.tacc.utexas.edu:32140/repository/maven-releases</url>
         </repository>
     </distributionManagement>
 
@@ -231,6 +231,7 @@
         <google-maven-replacer-plugin.version>1.5.3</google-maven-replacer-plugin.version>
         <jooq-codegen-maven-plugin.version>3.13.1</jooq-codegen-maven-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
         <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
@@ -952,6 +953,13 @@
                     </executions>
                 </plugin>
 
+                <!--  For releases to local nexus repo       -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deply-plugin</artifactId>
+                    <version>${maven-deploy-plugin.version}</version>
+                </plugin>
+
                 <!--  For releases to maven central          -->
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
@@ -1041,6 +1049,13 @@
             </plugins>
         </pluginManagement>
 
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>${maven-deploy-plugin.version}</version>
+        </plugin>
+      </plugins>
     </build>
     <profiles>
 
