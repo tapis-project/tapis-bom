@@ -178,11 +178,11 @@
     <distributionManagement>
         <snapshotRepository>
             <id>nexus-snapshots</id>
-	    <url>http://c002.rodeo.tacc.utexas.edu:32140/repository/maven-snapshots</url>
+	    <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-snapshots</url>
         </snapshotRepository>
         <repository>
             <id>nexus-releases</id>
-	    <url>http://c002.rodeo.tacc.utexas.edu:32140/repository/maven-releases</url>
+	    <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-releases</url>
         </repository>
     </distributionManagement>
 
