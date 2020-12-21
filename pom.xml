@@ -28,6 +28,19 @@
     </scm>
 
     <repositories>
+      <repository>
+        <id>tapis-local-snapshots</id>
+        <name>Local repo for snapshots</name>
+        <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-snapshots</url>
+        <releases>  <enabled>false</enabled> </releases>
+        <snapshots> <enabled>true</enabled>  </snapshots>
+      </repository>
+      <repository>
+        <id>tapis-local-releases</id>
+        <name>Local repo for releases</name>
+        <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-releases</url>
+      </repository>
+
         <repository>
             <id>oss.sonatype.org-snapshot</id>
             <url>http://oss.sonatype.org/content/repositories/snapshots</url>
@@ -49,11 +62,6 @@
             <!-- org.everit.json.schema (schema validation) -->
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
-        </repository>
-        <repository>
-            <id>tacc-snapshot</id>
-            <name>TACC ACI Maven repository</name>
-            <url>https://maven.tacc.utexas.edu/nexus/content/repositories/snapshots</url>
         </repository>
     </repositories>
 
