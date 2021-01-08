@@ -241,10 +241,10 @@
         <swagger-maven-plugin.version>2.0.10</swagger-maven-plugin.version>
 
         <!-- LIBRARY Versions (in alphabetical order) -->
-        <activemq-client.version>5.15.13</activemq-client.version>
-        <amqp-client.version>5.7.3</amqp-client.version>
+        <activemq-client.version>5.16.0</activemq-client.version>
+        <amqp-client.version>5.10.0</amqp-client.version>
         <args4j.version>2.33</args4j.version>
-        <commons-codec.version>1.12</commons-codec.version>
+        <commons-codec.version>1.15</commons-codec.version>
         <commons-dbutils.version>1.7</commons-dbutils.version>
         <commons-lang3.version>3.9</commons-lang3.version>
         <commons-io.version>2.6</commons-io.version>
