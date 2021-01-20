@@ -291,7 +291,7 @@
         <org.everit.json.schema.version>1.12.1</org.everit.json.schema.version>
         <p6spy.version>3.8.3</p6spy.version>
         <postgresql.version>42.2.6</postgresql.version>
-        <rabbitmq.version>3.6.11</rabbitmq.version>
+        <rabbitmq.version>5.10.0</rabbitmq.version>
         <reactor-test.version>3.2.3.RELEASE</reactor-test.version>
         <reactor-rabbitmq.version>1.4.4.RELEASE</reactor-rabbitmq.version>
         <reactor-core.version>3.3.11.RELEASE</reactor-core.version>
