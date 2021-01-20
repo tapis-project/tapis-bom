@@ -4,7 +4,7 @@
 
     <groupId>edu.utexas.tacc.tapis</groupId>
     <artifactId>tapis-bom</artifactId>
-    <version>1.11.35-SNAPSHOT</version>
+    <version>1.11.38-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <!-- Main BOM file for Tapis java projects using shared code and settings.
@@ -294,7 +294,7 @@
         <rabbitmq.version>5.10.0</rabbitmq.version>
         <reactor-test.version>3.2.3.RELEASE</reactor-test.version>
         <reactor-rabbitmq.version>1.4.4.RELEASE</reactor-rabbitmq.version>
-        <reactor-core.version>3.3.11.RELEASE</reactor-core.version>
+        <reactor-core.version>3.4.1</reactor-core.version>
         <shiro.version>1.4.1</shiro.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <snakeyaml.version>1.26</snakeyaml.version>
@@ -349,7 +349,6 @@
                 <version>${javax.validation.version}</version>
             </dependency>
 
-
             <!-- Reactor/RabbitMQ-->
             <dependency>
                 <groupId>io.projectreactor</groupId>
@@ -365,6 +364,11 @@
             <dependency>
                 <groupId>io.projectreactor</groupId>
                 <artifactId>reactor-core</artifactId>
+                <version>${reactor-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.projectreactor.addons</groupId>
+                <artifactId>reactor-extra</artifactId>
                 <version>${reactor-core.version}</version>
             </dependency>
 
