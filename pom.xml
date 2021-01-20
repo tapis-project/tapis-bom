@@ -349,7 +349,6 @@
                 <version>${javax.validation.version}</version>
             </dependency>
 
-
             <!-- Reactor/RabbitMQ-->
             <dependency>
                 <groupId>io.projectreactor</groupId>
@@ -368,7 +367,7 @@
                 <version>${reactor-core.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.projectreactor</groupId>
+                <groupId>io.projectreactor.addons</groupId>
                 <artifactId>reactor-extra</artifactId>
                 <version>${reactor-core.version}</version>
             </dependency>
