@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.utexas.tacc.tapis</groupId>
   <artifactId>tapis-bom</artifactId>
-  <version>1.11.34</version>
+  <version>1.11.36</version>
   <packaging>pom</packaging>
   <name>TACC Tapis API BOM</name>
   <description>TAPIS services BOM dependencies</description>
@@ -180,7 +180,7 @@
     <swagger-jaxrs2.version>2.0.10</swagger-jaxrs2.version>
     <undertow.version>2.2.2.Final</undertow.version>
     <commons-math3.version>3.6.1</commons-math3.version>
-    <reactor-core.version>3.3.11.RELEASE</reactor-core.version>
+    <reactor-core.version>3.4.1</reactor-core.version>
     <software.amazon.awssdk.version>2.13.11</software.amazon.awssdk.version>
     <testng.version>6.14.3</testng.version>
     <commons-lang3.version>3.9</commons-lang3.version>
@@ -209,7 +209,7 @@
     <maven-shade-plugin.version>3.2.1</maven-shade-plugin.version>
     <mockito-core.version>3.0.0</mockito-core.version>
     <javax.websocket-api.version>1.1</javax.websocket-api.version>
-    <build.timestamp>2021-01-08T15:06:25Z</build.timestamp>
+    <build.timestamp>2021-01-20T02:33:38Z</build.timestamp>
     <statefulj.version>3.0</statefulj.version>
     <java-source.version>1.15</java-source.version>
     <reactor-rabbitmq.version>1.4.4.RELEASE</reactor-rabbitmq.version>
@@ -299,7 +299,7 @@
   </pluginRepositories>
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
-    <scriptSourceDirectory>/var/lib/jenkins/jobs/TapisJava/jobs/2_Release/jobs/Shared/jobs/release-bom-local/workspace/src/main/scripts</scriptSourceDirectory>
+    <scriptSourceDirectory>/var/lib/jenkins/jobs/TapisJava/jobs/2_Release/jobs/Shared/jobs/release-bom/workspace/src/main/scripts</scriptSourceDirectory>
     <testSourceDirectory>src/test/java</testSourceDirectory>
     <outputDirectory>target/classes</outputDirectory>
     <testOutputDirectory>target/test-classes</testOutputDirectory>
@@ -314,6 +314,7 @@
       </testResource>
     </testResources>
     <directory>target</directory>
+    <finalName>tapis-bom-1.11.36</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-deploy-plugin</artifactId>
