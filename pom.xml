@@ -190,10 +190,10 @@
         <maven-compiler-plugin-release>15</maven-compiler-plugin-release>
 
         <!-- Version of tapis-client-java to be used. Individual projects may want to override. -->
-        <tapis-client-java.version>[1.11.67,2.0)</tapis-client-java.version>
+        <tapis-client-java.version>[1.11.69,2.0)</tapis-client-java.version>
 
         <!-- Version of tapis-shared-java to be used. Individual projects may want to override. -->
-        <tapis-shared-java.version>[1.11.77,2.0)</tapis-shared-java.version>
+        <tapis-shared-java.version>[1.11.79,2.0)</tapis-shared-java.version>
 
         <!-- Source encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -224,7 +224,7 @@
         <flyway-maven-plugin.version>6.0.8</flyway-maven-plugin.version>
         <gitflow-maven-plugin.version>1.14.0</gitflow-maven-plugin.version>
         <google-maven-replacer-plugin.version>1.5.3</google-maven-replacer-plugin.version>
-        <jooq-codegen-maven-plugin.version>3.13.1</jooq-codegen-maven-plugin.version>
+        <jooq-codegen-maven-plugin.version>3.14.8</jooq-codegen-maven-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
