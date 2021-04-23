@@ -282,7 +282,7 @@
         <jetty-server.version>9.4.0.M1</jetty-server.version>
         <jjwt.version>0.10.7</jjwt.version>
         <jooq.version>3.14.9</jooq.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <kubernetes-client.version>8.0.0</kubernetes-client.version>
         <logback-classic.version>1.2.3</logback-classic.version>  <!-- Logback supplies the proper version of sl4j -->
         <metrics-core.version>3.2.3</metrics-core.version>
