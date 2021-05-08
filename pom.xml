@@ -277,7 +277,7 @@
         <javax.xml.bind.jaxb-impl.version>2.3.2</javax.xml.bind.jaxb-impl.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <jcraft.version>0.1.55</jcraft.version>
-        <jersey-container-servlet.version>2.33</jersey-container-servlet.version> <!-- jersey group -->
+        <jersey-container-servlet.version>2.34</jersey-container-servlet.version> <!-- jersey group -->
         <jersey-entity-filtering.version>2.33</jersey-entity-filtering.version> <!-- jersey group -->
         <jetty-server.version>9.4.0.M1</jetty-server.version>
         <jjwt.version>0.10.7</jjwt.version>
