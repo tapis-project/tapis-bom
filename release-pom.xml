@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.utexas.tacc.tapis</groupId>
   <artifactId>tapis-bom</artifactId>
-  <version>1.11.50</version>
+  <version>1.11.51</version>
   <packaging>pom</packaging>
   <name>TACC Tapis API BOM</name>
   <description>TAPIS services BOM dependencies</description>
@@ -181,7 +181,7 @@
     <swagger-jaxrs2.version>2.0.10</swagger-jaxrs2.version>
     <undertow.version>2.2.2.Final</undertow.version>
     <commons-math3.version>3.6.1</commons-math3.version>
-    <reactor-core.version>3.4.1</reactor-core.version>
+    <reactor-core.version>3.4.6</reactor-core.version>
     <software.amazon.awssdk.version>2.13.11</software.amazon.awssdk.version>
     <testng.version>6.14.3</testng.version>
     <commons-lang3.version>3.12.0</commons-lang3.version>
@@ -189,7 +189,7 @@
     <javacc.version>7.0.6</javacc.version>
     <rabbitmq.version>5.10.0</rabbitmq.version>
     <javax.mail.version>1.6.2</javax.mail.version>
-    <reactor-test.version>3.2.3.RELEASE</reactor-test.version>
+    <reactor-test.version>3.4.6</reactor-test.version>
     <jaxb-api.version>2.3.1</jaxb-api.version>
     <postgresql.version>42.2.6</postgresql.version>
     <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
@@ -210,10 +210,10 @@
     <maven-shade-plugin.version>3.2.1</maven-shade-plugin.version>
     <mockito-core.version>3.0.0</mockito-core.version>
     <javax.websocket-api.version>1.1</javax.websocket-api.version>
-    <build.timestamp>2021-06-04T13:21:05Z</build.timestamp>
+    <build.timestamp>2021-06-04T16:21:17Z</build.timestamp>
     <statefulj.version>3.0</statefulj.version>
     <java-source.version>1.15</java-source.version>
-    <reactor-rabbitmq.version>1.4.4.RELEASE</reactor-rabbitmq.version>
+    <reactor-rabbitmq.version>1.5.2</reactor-rabbitmq.version>
     <google-maven-replacer-plugin.version>1.5.3</google-maven-replacer-plugin.version>
     <sshj.version>0.27.0</sshj.version>
     <swagger-maven-plugin.version>2.0.10</swagger-maven-plugin.version>
@@ -315,7 +315,7 @@
       </testResource>
     </testResources>
     <directory>target</directory>
-    <finalName>tapis-bom-1.11.50</finalName>
+    <finalName>tapis-bom-1.11.51</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-deploy-plugin</artifactId>
