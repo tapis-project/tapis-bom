@@ -260,7 +260,7 @@
         <hk2.version>2.6.1</hk2.version>
         <httpclient.version>4.5.8</httpclient.version>
         <httpmime.version>4.5.8</httpmime.version>
-        <jackson.version>2.10.1</jackson.version>
+        <jackson.version>2.12.1</jackson.version>
         <jakarta.el.version>3.0.3</jakarta.el.version>
         <jakarta.servlet-api.version>4.0.2</jakarta.servlet-api.version>          <!-- jersey group -->
         <jargon-core.version>4.3.0.1-RELEASE</jargon-core.version>
@@ -277,13 +277,13 @@
         <javax.xml.bind.jaxb-impl.version>2.3.2</javax.xml.bind.jaxb-impl.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <jcraft.version>0.1.55</jcraft.version>
-        <jersey-container-servlet.version>2.33</jersey-container-servlet.version> <!-- jersey group -->
-        <jersey-entity-filtering.version>2.33</jersey-entity-filtering.version> <!-- jersey group -->
+        <jersey-container-servlet.version>2.34</jersey-container-servlet.version> <!-- jersey group -->
+        <jersey-entity-filtering.version>2.34</jersey-entity-filtering.version> <!-- jersey group -->
         <jetty-server.version>9.4.0.M1</jetty-server.version>
         <jjwt.version>0.11.2</jjwt.version>
         <jooq.version>3.14.9</jooq.version>
-        <junit.version>4.12</junit.version>
-        <kubernetes-client.version>8.0.0</kubernetes-client.version>
+        <junit.version>4.13.1</junit.version>
+        <kubernetes-client.version>12.0.1</kubernetes-client.version>
         <logback-classic.version>1.2.3</logback-classic.version>  <!-- Logback supplies the proper version of sl4j -->
         <metrics-core.version>3.2.3</metrics-core.version>
         <mockito-core.version>3.0.0</mockito-core.version>
