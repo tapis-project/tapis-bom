@@ -243,12 +243,14 @@
         <!-- LIBRARY Versions (in alphabetical order) -->
         <activemq-client.version>5.16.0</activemq-client.version>
         <amqp-client.version>5.10.0</amqp-client.version>
+        <apache-sshd.version>2.7.0</apache-sshd.version>
         <args4j.version>2.33</args4j.version>
         <commons-codec.version>1.15</commons-codec.version>
         <commons-dbutils.version>1.7</commons-dbutils.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-io.version>2.9.0</commons-io.version>
         <commons-math3.version>3.6.1</commons-math3.version>
+        <eddsa.version>0.3.0</eddsa.version>
         <flywaydb.version>6.0.8</flywaydb.version>
         <google-findbugs.version>3.0.2</google-findbugs.version>
         <gsissh.version>0.12.1</gsissh.version>
@@ -770,6 +772,27 @@
                 <artifactId>statefulj-fsm</artifactId>
                 <version>${statefulj.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-core</artifactId>
+                <version>${apache-sshd.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-sftp</artifactId>
+                <version>${apache-sshd.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.sshd</groupId>
+                <artifactId>sshd-scp</artifactId>
+                <version>${apache-sshd.version}</version>
+            </dependency>
+            <!-- For ed25519 ssh support -->
+            <dependency>
+                <groupId>net.i2p.crypto</groupId>
+                <artifactId>eddsa</artifactId>
+                <version>${eddsa.version}</version>
+            </dependency>    
         </dependencies>
     </dependencyManagement>
 
