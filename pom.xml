@@ -278,7 +278,6 @@
         <javax.xml.bind.jaxb-core.version>2.3.0.1</javax.xml.bind.jaxb-core.version>
         <javax.xml.bind.jaxb-impl.version>2.3.2</javax.xml.bind.jaxb-impl.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
-        <jcraft.version>0.1.55</jcraft.version>
         <jersey-container-servlet.version>2.34</jersey-container-servlet.version> <!-- jersey group -->
         <jersey-entity-filtering.version>2.34</jersey-entity-filtering.version> <!-- jersey group -->
         <jetty-server.version>9.4.0.M1</jetty-server.version>
@@ -528,11 +527,6 @@
                 <groupId>javax.xml.bind</groupId>
                 <artifactId>jaxb-api</artifactId>
                 <version>${jaxb-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.jcraft</groupId>
-                <artifactId>jsch</artifactId>
-                <version>${jcraft.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.hk2</groupId>
