@@ -222,7 +222,7 @@
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
         <flyway-maven-plugin.version>6.0.8</flyway-maven-plugin.version>
-        <gitflow-maven-plugin.version>1.14.0</gitflow-maven-plugin.version>
+        <gitflow-maven-plugin.version>1.16.0</gitflow-maven-plugin.version>
         <google-maven-replacer-plugin.version>1.5.3</google-maven-replacer-plugin.version>
         <jooq-codegen-maven-plugin.version>3.14.9</jooq-codegen-maven-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
