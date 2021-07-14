@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.utexas.tacc.tapis</groupId>
   <artifactId>tapis-bom</artifactId>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <packaging>pom</packaging>
   <name>TACC Tapis API BOM</name>
   <description>TAPIS services BOM dependencies</description>
@@ -212,7 +212,7 @@
     <apache-sshd.version>2.7.0</apache-sshd.version>
     <mockito-core.version>3.0.0</mockito-core.version>
     <javax.websocket-api.version>1.1</javax.websocket-api.version>
-    <build.timestamp>2021-07-13T18:51:23Z</build.timestamp>
+    <build.timestamp>2021-07-14T22:55:03Z</build.timestamp>
     <statefulj.version>3.0</statefulj.version>
     <java-source.version>1.15</java-source.version>
     <reactor-rabbitmq.version>1.5.2</reactor-rabbitmq.version>
@@ -240,7 +240,7 @@
     <hikariCP.version>3.3.1</hikariCP.version>
     <swagger-ui.version>3.23.8</swagger-ui.version>
     <swagger-annotations.version>2.1.4</swagger-annotations.version>
-    <gitflow-maven-plugin.version>1.14.0</gitflow-maven-plugin.version>
+    <gitflow-maven-plugin.version>1.16.0</gitflow-maven-plugin.version>
     <swagger-annotations1.version>1.5.24</swagger-annotations1.version>
   </properties>
   <repositories>
@@ -317,7 +317,7 @@
       </testResource>
     </testResources>
     <directory>target</directory>
-    <finalName>tapis-bom-2.0.0</finalName>
+    <finalName>tapis-bom-2.0.1</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-deploy-plugin</artifactId>
