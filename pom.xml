@@ -169,19 +169,7 @@
             </roles>
         </developer>
     </developers>
-
-    <!--
-    <distributionManagement>
-      <snapshotRepository>
-        <id>nexus-snapshots</id>
-        <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-snapshots</url>
-      </snapshotRepository>
-      <repository>
-        <id>nexus-releases</id>
-        <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-releases</url>
-      </repository>
-    </distributionManagement>
-    -->
+    
     <properties>
         <!-- Java version -->
         <java-source.version>1.15</java-source.version>
@@ -1109,6 +1097,16 @@
             <name>!skipTaccProfile</name>
           </property>
         </activation>
+        <distributionManagement>
+          <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-snapshots</url>
+          </snapshotRepository>
+           <repository>
+             <id>nexus-releases</id>
+             <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-releases</url>
+          </repository>
+        </distributionManagement>
         <repositories>
           <repository>
             <id>tapis-local-snapshots</id>
