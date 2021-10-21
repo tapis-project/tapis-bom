@@ -301,7 +301,7 @@
         <testng.version>6.14.3</testng.version>
         <threetenbp.version>1.3.5</threetenbp.version>
         <undertow.version>2.2.2.Final</undertow.version>
-        <vault-java-driver.version>5.1.0-SNAPSHOT</vault-java-driver.version>
+        <vault-java-driver.version>5.1.2</vault-java-driver.version>
         <!-- A NOTE ABOUT INTER-DEPENDENCIES                                                 -->
         <!--                                                                                 -->
         <!-- When an above library version is followed by a comment for the form "XX group"  -->
@@ -733,7 +733,7 @@
             <dependency>
                 <groupId>edu.utexas.tacc.tapis</groupId>
                 <artifactId>tapis-vault-java-driver</artifactId>
-                <version>5.1.0-SNAPSHOT</version> 
+                <version>5.1.2</version> 
             </dependency>
             <dependency>
                 <groupId>io.kubernetes</groupId>
