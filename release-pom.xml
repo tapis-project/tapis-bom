@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.utexas.tacc.tapis</groupId>
   <artifactId>tapis-bom</artifactId>
-  <version>2.0.2</version>
+  <version>2.0.3</version>
   <packaging>pom</packaging>
   <name>TACC Tapis API BOM</name>
   <description>TAPIS services BOM dependencies</description>
@@ -212,7 +212,7 @@
     <apache-sshd.version>2.7.0</apache-sshd.version>
     <mockito-core.version>3.0.0</mockito-core.version>
     <javax.websocket-api.version>1.1</javax.websocket-api.version>
-    <build.timestamp>2021-09-02T21:37:51Z</build.timestamp>
+    <build.timestamp>2021-11-09T19:54:48Z</build.timestamp>
     <statefulj.version>3.0</statefulj.version>
     <java-source.version>1.15</java-source.version>
     <reactor-rabbitmq.version>1.5.2</reactor-rabbitmq.version>
@@ -317,7 +317,7 @@
       </testResource>
     </testResources>
     <directory>target</directory>
-    <finalName>tapis-bom-2.0.2</finalName>
+    <finalName>tapis-bom-2.0.3</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-deploy-plugin</artifactId>
