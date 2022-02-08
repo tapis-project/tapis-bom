@@ -227,7 +227,7 @@
         <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
         <openapi-generator-maven-plugin.version>5.4.0</openapi-generator-maven-plugin.version>
-        <swagger-maven-plugin.version>2.1.12</swagger-maven-plugin.version>
+        <swagger-maven-plugin.version>2.0.10</swagger-maven-plugin.version>
 
         <!-- LIBRARY Versions (in alphabetical order) -->
         <activemq-client.version>5.16.0</activemq-client.version>
