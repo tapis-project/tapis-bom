@@ -251,7 +251,7 @@
         <hk2.version>2.6.1</hk2.version>
         <httpclient.version>4.5.8</httpclient.version>
         <httpmime.version>4.5.8</httpmime.version>
-        <jackson.version>2.12.1</jackson.version>
+        <jackson.version>2.12.6.1</jackson.version>
         <jakarta.el.version>3.0.3</jakarta.el.version>
         <jakarta.servlet-api.version>4.0.3</jakarta.servlet-api.version>          <!-- jersey group -->
         <jargon-core.version>4.3.0.1-RELEASE</jargon-core.version>
