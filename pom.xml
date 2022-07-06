@@ -289,8 +289,7 @@
         <shiro.version>1.4.1</shiro.version>
         <slf4j-api.version>1.7.35</slf4j-api.version>
         <snakeyaml.version>1.26</snakeyaml.version>
-        <software.amazon.awssdk.version>2.13.11</software.amazon.awssdk.version> <!-- v2 of aws sdk-->
-        <com.amazonaws.version>1.11.327</com.amazonaws.version> <!-- v1 of aws sdk-->
+        <software.amazon.awssdk.version>2.17.219</software.amazon.awssdk.version> <!-- v2 of aws sdk-->
         <sshj.version>0.27.0</sshj.version>
         <statefulj.version>3.0</statefulj.version>
         <swagger-annotations1.version>1.6.5</swagger-annotations1.version> <!-- version hardcoded in code generator-->
@@ -428,13 +427,6 @@
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>jsr305</artifactId>
                 <version>${google-findbugs.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.amazonaws</groupId>
-                <artifactId>aws-java-sdk-bom</artifactId>
-                <version>${com.amazonaws.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>software.amazon.awssdk</groupId>
