@@ -179,10 +179,10 @@
         <maven-compiler-plugin-release>17</maven-compiler-plugin-release>
 
         <!-- Version of tapis-client-java to be used. Individual projects may want to override. -->
-        <tapis-client-java.version>[2.0.49,3.0)</tapis-client-java.version>
+        <tapis-client-java.version>[2.0.64,3.0)</tapis-client-java.version>
 
         <!-- Version of tapis-shared-java to be used. Individual projects may want to override. -->
-        <tapis-shared-java.version>[2.0.56,3.0)</tapis-shared-java.version>
+        <tapis-shared-java.version>[2.0.77,3.0)</tapis-shared-java.version>
 
         <!-- Source encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
