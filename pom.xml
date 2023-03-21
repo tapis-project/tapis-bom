@@ -1085,25 +1085,25 @@
         <distributionManagement>
           <snapshotRepository>
             <id>nexus-snapshots</id>
-            <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-snapshots</url>
+            <url>http://c006.rodeo.tacc.utexas.edu:30044/repository/maven-snapshots</url>
           </snapshotRepository>
            <repository>
              <id>nexus-releases</id>
-             <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-releases</url>
+             <url>http://c006.rodeo.tacc.utexas.edu:30044/repository/maven-releases</url>
           </repository>
         </distributionManagement>
         <repositories>
           <repository>
             <id>tapis-local-snapshots</id>
             <name>Local repo for snapshots</name>
-            <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-snapshots</url>
+            <url>http://c006.rodeo.tacc.utexas.edu:30044/repository/maven-snapshots</url>
             <releases>  <enabled>false</enabled> </releases>
             <snapshots> <enabled>true</enabled>  </snapshots>
           </repository>
           <repository>
             <id>tapis-local-releases</id>
             <name>Local repo for releases</name>
-            <url>http://c002.rodeo.tacc.utexas.edu:30044/repository/maven-releases</url>
+            <url>http://c006.rodeo.tacc.utexas.edu:30044/repository/maven-releases</url>
           </repository>
         </repositories>
       </profile>
