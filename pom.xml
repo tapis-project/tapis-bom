@@ -296,7 +296,7 @@
         <swagger-jaxrs2.version>2.1.13</swagger-jaxrs2.version>
         <testng.version>7.7.1</testng.version>
         <threetenbp.version>1.3.5</threetenbp.version>
-        <undertow.version>2.2.18.Final</undertow.version>
+        <undertow.version>2.2.24.Final</undertow.version>
         <vault-java-driver.version>5.1.2</vault-java-driver.version>
         <!-- A NOTE ABOUT INTER-DEPENDENCIES                                                 -->
         <!--                                                                                 -->
