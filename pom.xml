@@ -232,7 +232,7 @@
         <!-- LIBRARY Versions (in alphabetical order) -->
         <activemq-client.version>5.16.0</activemq-client.version>
         <amqp-client.version>5.14.1</amqp-client.version>
-        <apache-sshd.version>2.8.0</apache-sshd.version>
+        <apache-sshd.version>2.10.0</apache-sshd.version>
         <args4j.version>2.33</args4j.version>
         <commons-codec.version>1.15</commons-codec.version>
         <commons-dbutils.version>1.7</commons-dbutils.version>
