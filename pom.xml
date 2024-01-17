@@ -103,17 +103,6 @@
             </roles>
         </developer>
         <developer>
-            <id>sterry1</id>
-            <name>Steve Terry</name>
-            <email>sterry1@tacc.utexas.edu</email>
-            <url>https://tacc-cloud.readthedocs.io</url>
-            <organization>TACC</organization>
-            <organizationUrl>https://www.tacc.utexas.edu</organizationUrl>
-            <roles>
-                <role>developer</role>
-            </roles>
-        </developer>
-        <developer>
             <id>rcardone</id>
             <name>Richard Cardone</name>
             <email>rcardone@tacc.utexas.edu</email>
@@ -147,17 +136,6 @@
             </roles>
         </developer>
         <developer>
-            <id>jmeiring</id>
-            <name>Joseph Meiring</name>
-            <email>jmeiring@tacc.utexas.edu</email>
-            <url>https://tacc-cloud.readthedocs.io</url>
-            <organization>TACC</organization>
-            <organizationUrl>https://www.tacc.utexas.edu</organizationUrl>
-            <roles>
-                <role>developer</role>
-            </roles>
-        </developer>
-        <developer>
             <id>scblack</id>
             <name>Steven C. Black</name>
             <email>scblack@tacc.utexas.edu</email>
@@ -166,6 +144,31 @@
             <organizationUrl>https://www.tacc.utexas.edu</organizationUrl>
             <roles>
                 <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>dvernon</id>
+            <name>Dan Vernon</name>
+            <email>dvernon@tacc.utexas.edu</email>
+            <url>https://tacc-cloud.readthedocs.io</url>
+            <organization>TACC</organization>
+            <organizationUrl>https://www.tacc.utexas.edu</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>jmeiring</id>
+            <name>Joseph Meiring</name>
+            <roles>
+                <role>alumnus</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>sterry1</id>
+            <name>Steve Terry</name>
+            <roles>
+                <role>alumnus</role>
             </roles>
         </developer>
     </developers>
