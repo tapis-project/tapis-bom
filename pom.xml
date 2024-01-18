@@ -35,7 +35,7 @@
                 <enabled>false</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
                 <!-- Setting to always makes it difficult to change the BOM for -->
                 <!-- local development because local changes get overwritten.   -->
                 <!-- <updatePolicy>always</updatePolicy> -->
