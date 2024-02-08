@@ -284,10 +284,6 @@
         <p6spy.version>3.9.1</p6spy.version>
         <postgresql.version>42.7.1</postgresql.version>
         <rabbitmq.version>5.20.0</rabbitmq.version>
-        <reactor-test.version>3.4.6</reactor-test.version>
-        <reactor-rabbitmq.version>1.5.2</reactor-rabbitmq.version>
-        <reactor-core.version>3.4.6</reactor-core.version>
-        <reactor-extra.version>3.4.3</reactor-extra.version>
         <shiro.version>1.13.0</shiro.version>
         <slf4j-api.version>2.0.11</slf4j-api.version>
         <snakeyaml.version>2.2</snakeyaml.version>
@@ -335,29 +331,6 @@
                 <groupId>javax.validation</groupId>
                 <artifactId>validation-api</artifactId>
                 <version>${javax.validation.version}</version>
-            </dependency>
-
-            <!-- Reactor/RabbitMQ-->
-            <dependency>
-                <groupId>io.projectreactor</groupId>
-                <artifactId>reactor-test</artifactId>
-                <scope>test</scope>
-                <version>${reactor-test.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.projectreactor.rabbitmq</groupId>
-                <artifactId>reactor-rabbitmq</artifactId>
-                <version>${reactor-rabbitmq.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.projectreactor</groupId>
-                <artifactId>reactor-core</artifactId>
-                <version>${reactor-core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.projectreactor.addons</groupId>
-                <artifactId>reactor-extra</artifactId>
-                <version>${reactor-extra.version}</version>
             </dependency>
 
             <!-- Notifications/websockets -->
