@@ -273,6 +273,7 @@
         <jetbrains.annotations.version>20.1.0</jetbrains.annotations.version>
         <jjwt.version>0.11.5</jjwt.version>
         <jooq.version>3.17.18</jooq.version>
+        <json-org.version>20231013</json-org.version>
         <junit.version>4.13.2</junit.version>
         <kubernetes-client.version>12.0.2</kubernetes-client.version>
         <logback-classic.version>1.4.14</logback-classic.version>  <!-- Logback supplies the proper version of slf4j -->
