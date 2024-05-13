@@ -182,10 +182,10 @@
         <maven-compiler-plugin-release>17</maven-compiler-plugin-release>
 
         <!-- Version of tapis-client-java to be used. Individual projects may want to override. -->
-        <tapis-client-java.version>[2.0.124,3.0)</tapis-client-java.version>
+        <tapis-client-java.version>[2.0.128,3.0)</tapis-client-java.version>
 
         <!-- Version of tapis-shared-java to be used. Individual projects may want to override. -->
-        <tapis-shared-java.version>[2.0.168,3.0)</tapis-shared-java.version>
+        <tapis-shared-java.version>[2.0.173,3.0)</tapis-shared-java.version>
 
         <!-- Source encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -1075,25 +1075,25 @@
         <distributionManagement>
           <snapshotRepository>
             <id>nexus-snapshots</id>
-            <url>http://maven03.tacc.utexas.edu:8081/repository/maven-snapshots</url>
+            <url>https://maven03.tacc.utexas.edu/repository/maven-snapshots</url>
           </snapshotRepository>
            <repository>
              <id>nexus-releases</id>
-             <url>http://maven03.tacc.utexas.edu:8081/repository/maven-releases</url>
+             <url>https://maven03.tacc.utexas.edu/repository/maven-releases</url>
           </repository>
         </distributionManagement>
         <repositories>
           <repository>
             <id>tapis-local-snapshots</id>
             <name>Local repo for snapshots</name>
-            <url>http://maven03.tacc.utexas.edu:8081/repository/maven-snapshots</url>
+            <url>https://maven03.tacc.utexas.edu/repository/maven-snapshots</url>
             <releases>  <enabled>false</enabled> </releases>
             <snapshots> <enabled>true</enabled>  </snapshots>
           </repository>
           <repository>
             <id>tapis-local-releases</id>
             <name>Local repo for releases</name>
-            <url>http://maven03.tacc.utexas.edu:8081/repository/maven-releases</url>
+            <url>https://maven03.tacc.utexas.edu/repository/maven-releases</url>
           </repository>
         </repositories>
       </profile>
