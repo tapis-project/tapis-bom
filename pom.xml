@@ -182,10 +182,10 @@
         <maven-compiler-plugin-release>17</maven-compiler-plugin-release>
 
         <!-- Version of tapis-client-java to be used. Individual projects may want to override. -->
-        <tapis-client-java.version>[2.0.129,3.0)</tapis-client-java.version>
+        <tapis-client-java.version>[2.0.135,3.0)</tapis-client-java.version>
 
         <!-- Version of tapis-shared-java to be used. Individual projects may want to override. -->
-        <tapis-shared-java.version>[2.0.173,3.0)</tapis-shared-java.version>
+        <tapis-shared-java.version>[2.0.190,3.0)</tapis-shared-java.version>
 
         <!-- Source encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -249,7 +249,7 @@
         <gson.version>2.10.1</gson.version>
         <gson-fire.version>1.9.0</gson-fire.version>
         <guava.version>33.0.0-jre</guava.version>
-        <hibernate.validator.version>6.1.6.Final</hibernate.validator.version>
+        <hibernate.validator.version>6.2.0.Final</hibernate.validator.version>
         <hikariCP.version>5.1.0</hikariCP.version>
         <hk2.version>2.6.1</hk2.version>
         <irods-jargon.version>4.3.2.5-RELEASE</irods-jargon.version>
