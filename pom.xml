@@ -175,11 +175,11 @@
     
     <properties>
         <!-- Java version -->
-        <java-source.version>1.17</java-source.version>
-        <java-target.version>1.17</java-target.version>
+        <java-source.version>1.21</java-source.version>
+        <java-target.version>1.21</java-target.version>
 
         <!-- Maven compiler plugin Java release support -->
-        <maven-compiler-plugin-release>17</maven-compiler-plugin-release>
+        <maven-compiler-plugin-release>21</maven-compiler-plugin-release>
 
         <!-- Version of tapis-client-java to be used. Individual projects may want to override. -->
         <tapis-client-java.version>[2.0.135,3.0)</tapis-client-java.version>
@@ -234,7 +234,7 @@
         <!-- LIBRARY Versions (in alphabetical order) -->
         <activemq-client.version>5.18.3</activemq-client.version>
         <amqp-client.version>5.20.0</amqp-client.version>
-        <apache-sshd.version>2.11.0</apache-sshd.version>
+        <apache-sshd.version>2.14.0</apache-sshd.version>
         <args4j.version>2.33</args4j.version>
         <commons-codec.version>1.16.0</commons-codec.version>
         <commons-dbutils.version>1.8.1</commons-dbutils.version>
@@ -281,6 +281,7 @@
         <mockito.version>4.3.1</mockito.version>
         <okhttp3.version>4.12.0</okhttp3.version>
         <org.everit.json.schema.version>1.14.3</org.everit.json.schema.version>
+        <org.bouncycastle.version>1.79</org.bouncycastle.version>
         <p6spy.version>3.9.1</p6spy.version>
         <postgresql.version>42.7.2</postgresql.version>
         <rabbitmq.version>5.20.0</rabbitmq.version>
