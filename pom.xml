@@ -281,7 +281,6 @@
         <mockito.version>4.3.1</mockito.version>
         <okhttp3.version>4.12.0</okhttp3.version>
         <org.everit.json.schema.version>1.14.3</org.everit.json.schema.version>
-        <org.bouncycastle.version>1.79</org.bouncycastle.version>
         <p6spy.version>3.9.1</p6spy.version>
         <postgresql.version>42.7.2</postgresql.version>
         <rabbitmq.version>5.20.0</rabbitmq.version>
