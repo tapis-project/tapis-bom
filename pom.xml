@@ -182,7 +182,7 @@
         <maven-compiler-plugin-release>21</maven-compiler-plugin-release>
 
         <!-- Version of tapis-client-java to be used. Individual projects may want to override. -->
-        <tapis-client-java.version>[2.0.139,3.0)</tapis-client-java.version>
+        <tapis-client-java.version>[2.0.140,3.0)</tapis-client-java.version>
 
         <!-- Version of tapis-shared-java to be used. Individual projects may want to override. -->
         <tapis-shared-java.version>[2.0.194,3.0)</tapis-shared-java.version>
