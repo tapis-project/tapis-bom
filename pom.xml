@@ -271,7 +271,7 @@
         <jersey-container-servlet.version>2.45</jersey-container-servlet.version> <!-- jersey group -->
         <jersey-entity-filtering.version>2.45</jersey-entity-filtering.version> <!-- jersey group -->
         <jetbrains.annotations.version>20.1.0</jetbrains.annotations.version>
-        <jjwt.version>0.11.5</jjwt.version>
+        <auth0-java-jwt.version>4.5.0</auth0-java-jwt.version>
         <jooq.version>3.17.18</jooq.version>
         <json-org.version>20231013</json-org.version>
         <kubernetes-client.version>12.0.2</kubernetes-client.version>
@@ -555,21 +555,9 @@
                 <version>${jersey-container-servlet.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt-api</artifactId>
-                <version>${jjwt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt-impl</artifactId>
-                <version>${jjwt.version}</version>
-                <scope>runtime</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt-jackson</artifactId>
-                <version>${jjwt.version}</version>
-                <scope>runtime</scope>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>${auth0-java-jwt.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.irods.jargon</groupId>
