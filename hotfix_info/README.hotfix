@@ -1,5 +1,58 @@
-Preparing for a hotfix after a major release, e.g. release 1.6.0
+=====================================================================================================
+General process written up for the 1.8.5-hotfix release (Jobs, add support for apptainer fakeroot).
+=====================================================================================================
+   Also see confluence: https://tacc-main.atlassian.net/wiki/spaces/CIC/pages/512491571/Tapis+Java+Hotfix+Releases
+------------------------------------------------------------------------------------------------------------------------
+General Process
 
+1 Identify github hash for the impacted service.
+
+2 Based on the timestamp of the service hash identify github hashes  for shared code in use at that time. Note that this must include the openapi repos.
+
+3 Create hotfix branch for each repo
+
+4 In the hotfix branch of repo tapis-client-java, update pom files in for clients that have a specPath. For example, for apps-client/pom.xml:
+    <specPath>https://raw.githubusercontent.com/tapis-project/openapi-apps/1.8.5-hotfix/AppsAPI.yaml</specPath>
+
+5 For shared code, update snapshot versions in top level pom files to match the latest for the dev branch. Do this for branches tapis-bom, tapis-client-java, tapis-shared-java
+    NOTE: The version must be updated in top level pom file and pom files in sub-directories. Easiest way to do it is to use mvn versions:set. For example:
+    mvn versions:set -DgenerateBackupPoms=false -DnewVersion=2.0.222
+
+6 Make sure to enable snapshot releases (local-only). For releases after 1.8.1 this should already be done. For the 3 shared repos, do this by checking/updating the top level pom files. For example, from tapis-bom:
+7 <repositories>
+    <repository>
+      <id>tapis-local-snapshots</id>
+      <name>Local repo for snapshots</name>
+      <url><https://maven03.tacc.utexas.edu/repository/maven-snapshots</url>>
+      <releases>  <enabled>false</enabled> </releases>
+      <snapshots> <enabled>true</enabled>  </snapshots>
+    </repository>
+  <repository>
+
+8 Note that making the local snapshots look like the most recent version even though it is older code is needed for maven to properly resolve dependencies. There might be a better way.
+
+9 Commit shared code updates to hotfix branches.
+
+10 Should now be possible to build shared code locally using hotfix branches. Probably best to first clean out any existing mvn cached files. E.g.
+
+11 rm -fr ~/.m2/repository/edu/utexas/tacc/tapis
+
+12 Build shared code locally.
+
+13 Make sure hotfix branch of impacted service still builds locally.
+
+14 Make the hotfix updates to the service.
+
+15 Build the service and if possible test it.
+
+16 In the hotfix branch for the service create a special build and publish job. Copy from an existing hotfix branch and update as needed. E.g.
+      tapis-jobs/jobs_hotfix_build.sh at 1.8.5-hotfix · tapis-project/tapis-jobs
+------------------------------------------------------------------------------------------------------------------------
+
+==================================================================
+Notes written up for the 1.6.0-hotfix release
+==================================================================
+Preparing for a hotfix after a major release, e.g. release 1.6.0
 1. Create hotfix branches for all java code repositories, for example branch name 1.6.0-hotfix
    - tapis-bom
    - tapis-client-java
