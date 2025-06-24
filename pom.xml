@@ -236,6 +236,7 @@
         <amqp-client.version>5.20.0</amqp-client.version>
         <apache-sshd.version>2.14.0</apache-sshd.version>
         <args4j.version>2.33</args4j.version>
+        <com-opencsv.version>5.11.1</com-opencsv.version>
         <commons-codec.version>1.16.0</commons-codec.version>
         <commons-dbutils.version>1.8.1</commons-dbutils.version>
         <commons-exec.version>1.4.0</commons-exec.version>
