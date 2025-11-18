@@ -22,7 +22,7 @@
     </organization>
 
     <scm>
-        <connection>scm:git:git@github.com:tapis-project/tapis-bom.git</connection>
+        <developerConnection>scm:git:git@github.com:tapis-project/tapis-bom.git</developerConnection>
         <url>https://github.com/tapis-project/tapis-bom</url>
         <tag>HEAD</tag>
     </scm>
@@ -223,6 +223,7 @@
         <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
         <maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+        <maven-release-plugin.version>3.2.0</maven-release-plugin.version>
         <maven-shade-plugin.version>3.5.1</maven-shade-plugin.version>
         <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
@@ -1050,6 +1051,11 @@
         </pluginManagement>
 
       <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>${maven-release-plugin.version}</version>
+        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
