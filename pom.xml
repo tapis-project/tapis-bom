@@ -233,7 +233,7 @@
         <swagger-maven-plugin.version>2.1.13</swagger-maven-plugin.version>
 
         <!-- LIBRARY Versions (in alphabetical order) -->
-        <activemq-client.version>5.19.3</activemq-client.version>
+        <activemq-client.version>5.19.4</activemq-client.version>
         <amqp-client.version>5.20.0</amqp-client.version>
         <apache-sshd.version>2.14.0</apache-sshd.version>
         <args4j.version>2.33</args4j.version>
